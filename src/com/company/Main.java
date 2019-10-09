@@ -166,12 +166,110 @@ public class Main {
         System.out.println(NumberFormat.getCurrencyInstance().format(450000));
 
         // Reading Input
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("What is your age? : ");
+        // byte ageInput = scanner.nextByte();
+        // System.out.println("You are " + ageInput);
+        // System.out.print("What is your name? : ");
+        // String name = scanner.next().trim();
+        // System.out.println("You are " + name);
+
+        // comparison operators
+        int compX = 1;
+        int compY = 1;
+        System.out.println(compX == compY);
+        // note that !=, >, <, >= and <= are also valid operators
+
+        // logical operators
+        int temp = 99;
+        boolean isHot = temp >= 90 && temp < 100;
+        System.out.println(isHot);
+        boolean hasHighIncome = true;
+        boolean hasGoodCredit = true;
+        boolean hasCriminalRecord = true;
+        boolean isEligable = (hasHighIncome || hasGoodCredit) && !hasCriminalRecord;
+        System.out.println(isEligable);
+
+        // if statements
+        int hour = 12;
+        if (hour >= 12)
+            System.out.println("it is after noon");
+
+        if ("cody".length() > 3) {
+            System.out.println("Cody is a lengthy name");
+        } else {
+            System.out.println("Hmm short name");
+        }
+
+        // simple if statements
+
+        int income = 150_000;
+        boolean highIncome = (income >= 100_000);
+        System.out.println(highIncome);
+
+        // ternary operator
+        income = 120_000;
+        String className = income >= 100_000 ? "First" : "Economy";
+        System.out.println(className);
+
+        // switch
+        String employeeTitle = "Accountant";
+        switch (employeeTitle) {
+            case "Admin":
+                System.out.println("Admin");
+                break;
+
+            case "Accountant":
+                System.out.println("Accountant");
+                break;
+
+            default:
+                System.out.println("You're a guest");
+        }
+
+        // if you are using ints you can simply use case 1, case 35, etc
+
+        // for loops
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Hello world! " + i);
+        }
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("What is your age? : ");
-        byte ageInput = scanner.nextByte();
-        System.out.println("You are " + ageInput);
-        System.out.print("What is your name? : ");
-        String name = scanner.next().trim();
-        System.out.println("You are " + name);
+        String userInput = "quit";
+        while (!userInput.equals("quit")) {
+            System.out.print("Input : ");
+            userInput = scanner.next().toLowerCase();
+            if (userInput.equals("pass"))
+                continue;
+            if (userInput.equals("quit"))
+                break;
+            System.out.println("You typed " + userInput);
+        }
+        // do loops check the condition last, while does it first
+        // break/continue terminate and sends loop back to logic check
+        int counter = 1;
+        do {
+            System.out.println(counter);
+            counter++;
+        } while (counter <= 10);
+
+        // for each loops
+        String[] cats = {"Joey", "Pheebs", "Dwight"};
+
+        for (int i = 0; i < cats.length; i++) {
+            System.out.println(cats[i]);
+        }
+        // cleaner way to write the above:
+        for (String cat : cats) {
+            System.out.println(cat);
+        }
+        // note that you must loop from the beginning here
+
+        double pi = 3.14; //classic variable
+
+        System.out.println(addInts(12, 12));
+    }
+    public static int addInts(int a, int b) {
+        return a+b;
     }
 }
